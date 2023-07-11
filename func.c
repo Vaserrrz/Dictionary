@@ -18,6 +18,21 @@ stTrie *stNuevoNodo(void)
     return( stNodo) ;
 }
 
+/************************************************************************************
+ * NOMBRE:      vInsertar_Palabra
+ * 
+ * DESCRIPCION: Inserta una palabra en el arbol trie, asigna 1 si es 
+ *              una hoja, Ademas de asignale  a esa hoja, la posicion en el 
+ *              archivo del significado
+ * 
+ * PARAMETROS: 
+ *              stCabeza, apuntador al primer nodo del arbol
+ *              szPablapra, apuntador a la cadena de caracteres que contien la palabra
+ *              a insertar en el arbol trie
+ *              ulSignificado, Possicion en el archivo qie contiene el significado
+ * 
+ * RETORNA:     nada
+ * **********************************************************************************/
 void vInsertar_Palabra(stTrie *stCabeza, char *pszPalabra, unsigned long ulSignificado)
 {
     stTrie *stActualNodo ;
