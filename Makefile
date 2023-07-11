@@ -6,3 +6,4 @@ main.o: main.c
 		gcc -c main.c
 diccionario: main.o func.o
 	gcc -o diccionario func.o main.o
+	./diccionario
