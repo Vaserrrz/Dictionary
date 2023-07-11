@@ -10,7 +10,7 @@
  * 
  * RETORNA: apuntador a la estructura de tipo Trie
  * **************************************************************************/
-stTrie *stNuevoNodo(void)
+static stTrie *stNuevoNodo(void)
 {
     stTrie *stNodo;
     stNodo = ( stTrie *) malloc(sizeof (stTrie)) ;  // se pide memoria dinamica
@@ -33,7 +33,7 @@ stTrie *stNuevoNodo(void)
  * 
  * RETORNA:     nada
  * **********************************************************************************/
-void vInsertar_Palabra(stTrie *stCabeza, char *pszPalabra, unsigned long ulSignificado)
+static void vInsertar_Palabra(stTrie *stCabeza, char *pszPalabra, unsigned long ulSignificado)
 {
     stTrie *stActualNodo ;
     stActualNodo = stCabeza ;
