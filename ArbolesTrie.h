@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
-#include <string.h>
+#include <strings.h>
+
 #define ERROR                0
 #define EXITO                1
 #define CANT_CARACTERES     26 // Cantidad de carcateres usados en el alfabeto EEUU
@@ -16,10 +17,9 @@ typedef struct ArbolTrie stTrie ; // se renombra la estructura para mayor comodi
 stTrie stNodoInicial ;          // Nodo Cabecera del Arbol Trie
 char szDiccionario[100] ;       // Nombre del Archivo Diccionario
 
-// Funciones
-stTrie *stBuscar(stTrie *stCabeza, char *pszPalabra);
+stTrie *stNuevoNodo(void) ;
+void vInsertar_Palabra(stTrie *stCabeza, char *pszPalabra, unsigned long ulSignificado);
+stTrie *stBuscar(stTrie *stCabeza, char *pszBuscar);
 void vBusca_Imprime_Archivo( unsigned long ulPosicion, char *pszPalabra);
 void vImprime(stTrie *stCabeza, char *pszPalabra);
 short sLeer_Diccionario (char *pszDiccionario);
-
-

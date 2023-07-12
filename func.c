@@ -1,5 +1,6 @@
 #include "ArbolesTrie.h"
 
+
 /*****************************************************************************
  * NOMBRE: stNuevoNodo
  * 
@@ -10,7 +11,9 @@
  * 
  * RETORNA: apuntador a la estructura de tipo Trie
  * **************************************************************************/
-static stTrie *stNuevoNodo(void)
+
+
+stTrie *stNuevoNodo(void)
 {
     stTrie *stNodo;
     stNodo = ( stTrie *) malloc(sizeof (stTrie)) ;  // se pide memoria dinamica
@@ -18,7 +21,8 @@ static stTrie *stNuevoNodo(void)
     return( stNodo) ;
 }
 
-/*******************************************************************************
+
+/************************************************************************************
  * NOMBRE:      vInsertar_Palabra
  * 
  * DESCRIPCION: Inserta una palabra en el arbol trie, asigna 1 si es 
@@ -32,8 +36,8 @@ static stTrie *stNuevoNodo(void)
  *              ulSignificado, Possicion en el archivo qie contiene el significado
  * 
  * RETORNA:     nada
- * ****************************************************************************/
-static void vInsertar_Palabra(stTrie *stCabeza, char *pszPalabra, unsigned long ulSignificado)
+ * **********************************************************************************/
+void vInsertar_Palabra(stTrie *stCabeza, char *pszPalabra, unsigned long ulSignificado)
 {
     stTrie *stActualNodo ;
     stActualNodo = stCabeza ;
@@ -59,7 +63,7 @@ static void vInsertar_Palabra(stTrie *stCabeza, char *pszPalabra, unsigned long 
     stActualNodo->ulSignificado = ulSignificado ; // se le asigna a esa palabra el significado
 }
 
-/*******************************************************************************
+/************************************************************************************
  * NOMBRE:      stBuscar
  * 
  * DESCRIPCION: Busca el nodo que corresponde a la ultima letra que esta en el string
@@ -72,7 +76,7 @@ static void vInsertar_Palabra(stTrie *stCabeza, char *pszPalabra, unsigned long 
  * 
  * RETORNA:     el nodo desde sonde se va buscar toods los posibles significados
  *              o NULL sino lo encontro
- * ****************************************************************************/
+ * **********************************************************************************/
 stTrie *stBuscar(stTrie *stCabeza, char *pszBuscar)
 {
 stTrie *stNodo = stCabeza ;
@@ -100,7 +104,7 @@ short sIndice ;
 }
 
 
-/*******************************************************************************
+/************************************************************************************
  * NOMBRE:      vBusca_Imprime_Archivo
  * 
  * DESCRIPCION: Busca el nodo que corresponde a la ultima letra que esta en el string
@@ -112,7 +116,9 @@ short sIndice ;
  *              a Buscar en el arbol trie
  * 
  * RETORNA:     nada
- * ****************************************************************************/
+ * **********************************************************************************/
+
+
 void vBusca_Imprime_Archivo( unsigned long ulPosicion, char *pszPalabra)
 {
     FILE *fpArchivo ;
@@ -137,7 +143,7 @@ void vBusca_Imprime_Archivo( unsigned long ulPosicion, char *pszPalabra)
 }
 
 
-/*******************************************************************************
+/************************************************************************************
  * NOMBRE:      vImprime
  * 
  * DESCRIPCION: Busca el nodo que corresponde a la ultima letra que esta en el string
@@ -149,7 +155,8 @@ void vBusca_Imprime_Archivo( unsigned long ulPosicion, char *pszPalabra)
  *              a Buscar en el arbol trie
  * 
  * RETORNA:     nada
- * ****************************************************************************/
+ * **********************************************************************************/
+
 void vImprime(stTrie *stCabeza, char *pszPalabra)
 {
     stTrie *stNodo ;
@@ -175,7 +182,7 @@ void vImprime(stTrie *stCabeza, char *pszPalabra)
 }
 
 
-/*******************************************************************************
+/************************************************************************************
  * NOMBRE:       sLeer_Diccionario
  * 
  * DESCRIPCION:  DAdo el nombre de una archivo, lo abre y guarda las palabras alli 
@@ -186,7 +193,9 @@ void vImprime(stTrie *stCabeza, char *pszPalabra)
  * 
  * RETORNA:     ERROR se no fue posible abrir el archivo
  *              EXITO si la cargar del archivo fue posible
- ******************************************************************************/
+ * **********************************************************************************/
+
+
 short sLeer_Diccionario (char *pszDiccionario)
 {
     FILE *fpArchivo;
@@ -205,10 +214,9 @@ short sLeer_Diccionario (char *pszDiccionario)
         // si no lee nada se acabo el archivo y sale
         if(strlen(szPalabra) == 0)
             break;
-    szPalabra[strlen(szPalabra)] = 0 ;
         // se suma la cantidad de caracrteres de la palbra para saber
         // DOnde esta el primer significado de esa palabra 
-        ulOffSet += strlen(szPalabra);
+        ulOffSet += strlen(szPalabra) + 1;
         // se lee el significado
         fgets(szSignificado,250,fpArchivo) ;
         // si la primera letra es un '+' es el significado adicional de la palabra anterior
@@ -222,7 +230,7 @@ short sLeer_Diccionario (char *pszDiccionario)
         //Agrega la nueva palabra al arbol
         //printf("[%s][%lu]",szPalabra,ulOffSet) ;
         vInsertar_Palabra (&stNodoInicial,szPalabra, ulOffSet) ;
-        ulOffSet += strlen(szSignificado)  ;
+        ulOffSet += strlen(szSignificado) ;
         memset(szPalabra,0,sizeof(szPalabra));
     }
     return(EXITO) ;

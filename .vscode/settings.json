@@ -4,6 +4,7 @@
         "strings.h": "c",
         "stdlib.h": "c",
         "string.h": "c",
-        "arbolestrie.h": "c"
+        "arbolestrie.h": "c",
+        "stdio.h": "c"
     }
 }
