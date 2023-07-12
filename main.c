@@ -1,5 +1,6 @@
 #include "ArbolesTrie.h"
 
+
 int main()
 {
     //char szOpcion[20] ;
@@ -19,7 +20,7 @@ int main()
             printf("\n> h         ==> para obtener esta ayuda") ;
             printf("\n> q         ==> para salir de este programa");
             printf("\n> I  Nombre ==> Carga el diccionario que hay en el archivo <nombre>.dic") ;
-            printf("\n> s palabra ==> busca el sognificado de la pablabra <palabra>");
+            printf("\n> s palabra ==> busca el significado de la pablabra <palabra>");
             printf("\n> p prefijo ==> muestra los significados de de todas la palabras que comienza con el prefijo <prefijo>") ;
             printf("\n> ");
         }

@@ -23,3 +23,5 @@ void vImprime(stTrie *stCabeza, char *pszPalabra);
 short sLeer_Diccionario (char *pszDiccionario);
 
 
+stTrie *stNuevoNodo(void);
+void vInsertar_Palabra(stTrie *stCabeza, char *pszPalabra, unsigned long ulSignificado);
