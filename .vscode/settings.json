@@ -3,6 +3,7 @@
         "*.embeddedhtml": "html",
         "strings.h": "c",
         "stdlib.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "arbolestrie.h": "c"
     }
 }

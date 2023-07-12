@@ -1,4 +1,4 @@
-#include "func.h"
+#include "ArbolesTrie.h"
 
 int main()
 {
@@ -15,11 +15,11 @@ int main()
         {
             printf("\n>TODOS LOS DERECHOS RESERVADOS") ;
             printf("\n>Este programa guarda un diccionario en ingles") ;
-            printf("\n>dado los comandos seguido :") ;
+            printf("\n>dado los comando seguido :") ;
             printf("\n> h         ==> para obtener esta ayuda") ;
             printf("\n> q         ==> para salir de este programa");
-            printf("\n> I  Nombre ==> carga el diccionario que hay en el archivo <nombre>.dic") ;
-            printf("\n> s palabra ==> busca el significado de la pablabra <palabra>");
+            printf("\n> I  Nombre ==> Carga el diccionario que hay en el archivo <nombre>.dic") ;
+            printf("\n> s palabra ==> busca el sognificado de la pablabra <palabra>");
             printf("\n> p prefijo ==> muestra los significados de de todas la palabras que comienza con el prefijo <prefijo>") ;
             printf("\n> ");
         }
